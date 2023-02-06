@@ -4,7 +4,6 @@ const timeZone = document.querySelector('.timezone').querySelector('h2')
 const isp = document.querySelector('.isp').querySelector('h2')
 
 
-
 window.addEventListener('load', getUserIp)
 
 const requestIp = async (res) => {
@@ -23,6 +22,12 @@ function getUserIp() {
         userLocation.textContent = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`
         timeZone.textContent = `GMT ${data.location.timezone}`
         isp.textContent = `${data.isp}`
+        var map = L.map('map').setView([data.location.lat, data.location.lng], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([data.location.lat, data.location.lng]).addTo(map)
     }).catch((newError) => {alert(newError.message)
     })
 }
