@@ -46,6 +46,11 @@ input{
     font-size: 1.3rem;
     font-family: 'Rubik', sans-serif;
 }
+input::placeholder{
+    font-family: 'Rubik', sans-serif;
+    font-size: .7rem;
+    color:hsl(0, 0%, 59%);
+}
 button{
     width: 15%;
     height: 100%;
