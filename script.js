@@ -19,7 +19,7 @@ function getUserIp() {
     requestIp('https://geo.ipify.org/api/v2/country,city?apiKey=at_CnS6qv6YMyDZd96XUFQQCjZ7EYmJu').then((data) => {
         console.log('resolved', data)
         ipAddress.textContent = `${data.ip}`
-        userLocation.textContent = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`
+        userLocation.textContent = `${data.location.region}, ${data.location.country} ${data.location.postalCode}`
         timeZone.textContent = `GMT ${data.location.timezone}`
         isp.textContent = `${data.isp}`
         var map = L.map('map').setView([data.location.lat, data.location.lng], 13);
