@@ -68,13 +68,13 @@ button{
     border-radius: 15px;
     background-color: hsl(0, 0%, 100%);
     padding: 1.5rem;
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
     position: sticky;
     z-index: 10;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .4);
 }
 .ip-info h5{
     color: var(--dark-gray);
@@ -94,4 +94,40 @@ button{
     z-index: 2;
     height:  100vh;
     margin-top: -11rem;
+}
+
+@media screen and (min-width: 760px){
+    header{
+        height: 400px;
+    }
+    .ip-search{
+        width: 440px;
+    }
+    input{
+        width: 400px;
+    }
+    button{
+        width: 40px;
+    }
+    .ip-info{
+        flex-direction: row;
+        height: 120px;
+        position: fixed;
+        top: 300px;
+        left: 12.5%;
+        text-align: left;
+    }
+    .ip-info h2{
+        margin-top: .8em;
+    }
+    .ip-address, .location, .timezone, .isp{
+        align-self: center;
+        height: 80%;
+    }
+    .location,
+    .timezone,
+    .isp {
+        border-left: 1px solid var(--dark-gray);
+        padding-left: 1.5em;
+    }
 }
