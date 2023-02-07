@@ -3,7 +3,7 @@ const userLocation = document.querySelector('.location').querySelector('h2')
 const timeZone = document.querySelector('.timezone').querySelector('h2')
 const isp = document.querySelector('.isp').querySelector('h2')
 const searchInput = document.querySelector('input')
-const searchBtn = document.querySelector('button')
+const searchBtn = document.querySelector('.searchBtn')
 var map = new L.Map('map')
 
 
